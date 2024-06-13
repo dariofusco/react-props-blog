@@ -5,7 +5,7 @@ const posts = [
     {
         id: 1,
         title: "Titolo del Post",
-        image: '',
+        image: 'https://picsum.photos/200?random=1',
         content:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit animi unde quasi enim non esse ratione voluptas voluptate, officiis veritatis magni blanditiis possimus nobis cum id inventore corporis deserunt hic.",
         tags: ["html", "css"],
@@ -14,7 +14,7 @@ const posts = [
     {
         id: 2,
         title: "Titolo del Post",
-        image: '',
+        image: 'https://picsum.photos/200?random=2',
         content:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit animi unde quasi enim non esse ratione voluptas voluptate, officiis veritatis magni blanditiis possimus nobis cum id inventore corporis deserunt hic.",
         tags: ["js", "css"],
@@ -23,7 +23,7 @@ const posts = [
     {
         id: 3,
         title: "Titolo del Post",
-        image: '',
+        image: 'https://picsum.photos/200?random=3',
         content:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit animi unde quasi enim non esse ratione voluptas voluptate, officiis veritatis magni blanditiis possimus nobis cum id inventore corporis deserunt hic.",
         tags: ["js", "php"],
@@ -32,7 +32,7 @@ const posts = [
     {
         id: 4,
         title: "Titolo del Post",
-        image: '',
+        image: 'https://picsum.photos/200?random=4',
         content:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit animi unde quasi enim non esse ratione voluptas voluptate, officiis veritatis magni blanditiis possimus nobis cum id inventore corporis deserunt hic.",
         tags: ["html"],
@@ -44,15 +44,18 @@ function Main() {
     return (
         <>
             <main>
-                {posts.map((post) => (
-                    <Card
-                        key={post.id}
-                        title={post.title}
-                        content={post.content}
-                        tags={post.tags}
-                        published={post.published}
-                    />
-                ))}
+                <div className={mainStyles.container}>
+                    {posts.map((post) => (
+                        <Card
+                            key={post.id}
+                            title={post.title}
+                            image={post.image}
+                            content={post.content}
+                            tags={post.tags}
+                            published={post.published}
+                        />
+                    ))}
+                </div>
             </main>
         </>
     )
