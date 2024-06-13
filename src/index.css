@@ -2,3 +2,26 @@ body {
   background-color: rgb(232, 232, 232);
   width: 100vw;
 }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  
+}
+
+li {
+  padding: 10px;
+  
+}
+
+a {
+  text-decoration: none;
+  font-size: large;
+  padding: 10px;
+}
+
+a:hover {
+  background-color: lightgray;
+}

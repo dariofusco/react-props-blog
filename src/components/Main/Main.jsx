@@ -40,10 +40,30 @@ const posts = [
     },
 ];
 
+/*const tags = posts.map((post) =>
+    post.tags
+)
+
+const tag = Array.from(new Set(tags.flat()))
+
+console.log(tag)*/
+
+const distinctTags = [...new Set(posts.flatMap(post => post.tags))];
+console.log(distinctTags)
+
 function Main() {
     return (
         <>
             <main>
+
+                <ul>
+                    {
+                        distinctTags.map((tag, i) =>
+                            <li key={i}><a href="#">{tag}</a></li>
+                        )
+                    }
+                </ul>
+
                 <div className={mainStyles.container}>
                     {posts.map((post) => (
                         <Card
@@ -56,6 +76,7 @@ function Main() {
                         />
                     ))}
                 </div>
+
             </main>
         </>
     )
