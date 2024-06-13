@@ -44,7 +44,15 @@ function Main() {
     return (
         <>
             <main>
-                <Card />
+                {posts.map((post) => (
+                    <Card
+                        key={post.id}
+                        title={post.title}
+                        content={post.content}
+                        tags={post.tags}
+                        published={post.published}
+                    />
+                ))}
             </main>
         </>
     )

@@ -1,17 +1,22 @@
 import imagePost from "../../assets/post.jpg";
 import cardStyles from "./Card.module.css";
 
-function Main() {
+function Card({ title, content, tags, published }) {
     return (
         <>
-            <div className={cardStyles.card}>
-                <img src={imagePost} alt="" />
-                <h3>Titolo del post</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius laudantium, molestias amet veniam in debitis cumque ipsam aut. Tempore earum consectetur aperiam alias. Aut sint, animi adipisci ea sed temporibus aliquid consequatur harum corporis molestias in dolores iste odit sequi ipsum sapiente nihil, illo est neque! Ullam repudiandae repellendus ad?</p>
-                <button>Leggi di più</button>
-            </div>
+            {published &&
+                <div className={cardStyles.card}>
+                    <img src={imagePost} alt="" />
+                    <h3>{title}</h3>
+                    <p>{content}</p>
+                    {tags.map((tag, index) => (
+                        <span className={tag == 'html' ? cardStyles.green : '' || tag == 'css' ? cardStyles.pink : tag == 'js' ? cardStyles.blue : ''} key={index}>{tag}</span>
+                    ))}
+                    <button>Leggi di più</button>
+                </div>
+            }
         </>
     )
 }
 
-export default Main
+export default Card
