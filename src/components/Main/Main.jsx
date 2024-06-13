@@ -59,7 +59,7 @@ function Main() {
                 <ul>
                     {
                         distinctTags.map((tag, i) =>
-                            <li key={i}><a href="#">{tag}</a></li>
+                            <li key={i}><a href="#">{tag.toUpperCase()}</a></li>
                         )
                     }
                 </ul>
